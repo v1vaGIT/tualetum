@@ -218,6 +218,16 @@ Inputmask({
   }
 }).mask(phoneInput);
 
+const phoneInput2 = document.getElementById('phone2');
+Inputmask({
+  mask: "+7 (999) 999-99-99",
+  placeholder: " ",
+  showMaskOnHover: false,
+  onBeforePaste: function (pastedValue, opts) {
+    return pastedValue.replace(/\D/g, '');
+  }
+}).mask(phoneInput2);
+
 const burger = document.getElementById('burger');
 const menu = document.getElementById('menu');
 
@@ -245,6 +255,9 @@ function ShowForm() {
 const form = document.getElementById('callBackId')
 form.addEventListener('submit', formSend)
 
+const form2 = document.getElementById('callBackId2')
+form2.addEventListener('submit', formSend2)
+
 async function formSend(e) {
   e.preventDefault();
 
@@ -271,6 +284,30 @@ async function formSend(e) {
   } else {
     alert('Необходимо ввести корректный номер телефона')
   }
+}
 
-  
+async function formSend2(e) {
+  e.preventDefault();
+
+  let formData = new FormData(form2)
+
+  const validLenght = formData.get('phone').replaceAll(' ', '')
+
+  if(validLenght.length === 16) {
+    let response = await fetch('sendmail.php', {
+      method: 'POST',
+      body: formData
+    })
+
+    if (response.ok) { 
+      form2.reset();
+      alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+    }
+
+    // удалить 
+    form.reset();
+    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+  } else {
+    alert('Необходимо ввести корректный номер телефона')
+  }
 }
