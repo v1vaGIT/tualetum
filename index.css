@@ -459,7 +459,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
         font-size: 18px;
     }
 }
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 459px) {
     .services__element-description-name{
         font-size: 16px;
     }
