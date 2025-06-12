@@ -249,6 +249,11 @@ closeForm.addEventListener('click', ()=>{
   callMeForm.classList.toggle('feedBackFormActive');
 })
 
+const showFormButtons = document.querySelectorAll('.callbackMeAction');
+showFormButtons.forEach((btn) => {
+  btn.addEventListener('click', ShowForm)
+})
+
 function ShowForm() {
   callMeForm.classList.toggle('feedBackFormActive');
 }
