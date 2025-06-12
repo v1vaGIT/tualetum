@@ -1175,3 +1175,107 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .menu a:hover {
     background-color: #444;
 }
+.contactUs{
+    position: fixed;
+    z-index: 9998;
+    background-color: #002436;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 50%;
+}
+@media screen and (max-width: 1023px) {
+    .contactUs{
+        display: none;
+    }
+}
+.contactUsLinks{
+    height: auto;
+    max-height: 0px;
+    overflow: hidden;
+    background: #D9D9D9;
+    transition: max-height 1s;
+    transition: padding 0.3s;
+    border-radius: 29px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9997;
+    right: 60px;
+    bottom: 70px;
+    width: 60px;
+    padding: 0px 5px;
+}
+@media screen and (max-width: 1023px) {
+    .contactUsLinks{
+        display: none;
+    }
+}
+.contactUsLinksOpen{
+    max-height: 235px;
+    padding: 34px 5px 65px;
+}
+.contactUsMobile{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.feedBackForm{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 10001;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.feedBackFormActive{
+    display: flex;
+}
+.feedBackFormContent{
+    border-radius: 38px;
+    background-color: #002436;
+    padding: 45px 50px;
+}
+@media screen and (max-width: 480px) {
+    .feedBackFormContent{
+        padding: 45px 20px 25px;
+    }
+}
+.feedBackFormContentTitle{
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 385px;
+    position: relative;
+    margin-bottom: 35px;
+}
+.feedBackFormContentTitle span{
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'SF Pro Display', sans-serif;
+    cursor: pointer;
+    position: absolute;
+    right: -30px;
+    top: -35px;
+}
+@media screen and (max-width: 480px) {
+    .feedBackFormContentTitle span{
+        right: 10px;
+        top: -40px;
+    }
+}

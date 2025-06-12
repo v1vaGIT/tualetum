@@ -1,4 +1,3 @@
-console.log('loaded')
 //шарики start
 const container = document.querySelector('.startScreen');
 const count = 30; // количество дочерних div
@@ -226,3 +225,52 @@ burger.addEventListener('click', () => {
   burger.classList.toggle('active');
   menu.classList.toggle('open');
 });
+
+const contactUs = document.querySelector('.contactUs')
+const contactUsLinks = document.querySelector('.contactUsLinks');
+contactUs.addEventListener('click', () => {
+  contactUsLinks.classList.toggle('contactUsLinksOpen')
+})
+
+const callMeForm = document.querySelector('.feedBackForm')
+const closeForm = document.querySelector('#closeForm')
+closeForm.addEventListener('click', ()=>{
+  callMeForm.classList.toggle('feedBackFormActive');
+})
+
+function ShowForm() {
+  callMeForm.classList.toggle('feedBackFormActive');
+}
+
+const form = document.getElementById('callBackId')
+form.addEventListener('submit', formSend)
+
+async function formSend(e) {
+  e.preventDefault();
+
+  let formData = new FormData(form)
+
+  const validLenght = formData.get('phone').replaceAll(' ', '')
+
+  if(validLenght.length === 16) {
+    let response = await fetch('sendmail.php', {
+      method: 'POST',
+      body: formData
+    })
+
+    if (response.ok) {
+      callMeForm.classList.toggle('feedBackFormActive');  
+      form.reset();
+      alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+    }
+
+    // удалить
+    callMeForm.classList.toggle('feedBackFormActive');  
+    form.reset();
+    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.')
+  } else {
+    alert('Необходимо ввести корректный номер телефона')
+  }
+
+  
+}
