@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 //шарики start
 const container = document.querySelector('.startScreen');
 const count = 30; // количество дочерних div
@@ -311,3 +312,6 @@ async function formSend2(e) {
     alert('Необходимо ввести корректный номер телефона')
   }
 }
+
+//DOM loaded
+})
