@@ -1,7 +1,7 @@
 console.log('loaded')
 //шарики start
 const container = document.querySelector('.startScreen');
-const count = 40; // количество дочерних div
+const count = 30; // количество дочерних div
 const balls = [];
 const sizes = [70, 50, 9];        // допустимые размеры px
 const opacities = [1, 0.5, 0.3];  // допустимые значения opacity
