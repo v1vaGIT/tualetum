@@ -121,6 +121,32 @@ const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 4, // Количество видимых слайдов
   spaceBetween: 20, // Расстояние между слайдами
+  breakpoints: {
+      // Когда ширина <= 640px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // Когда ширина <= 768px
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // Когда ширина <= 1023px
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      // Когда ширина >= 1024px
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1575: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+    },
 
   // Navigation arrows
   navigation: {
@@ -136,6 +162,33 @@ const swiper2 = new Swiper('.swiper2', {
   slidesPerView: 4, // Количество видимых слайдов
   spaceBetween: 20, // Расстояние между слайдами
 
+  breakpoints: {
+      // Когда ширина <= 640px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // Когда ширина <= 768px
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // Когда ширина <= 1023px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // Когда ширина >= 1024px
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1575: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+    },
+
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next-work',
@@ -149,7 +202,27 @@ ymaps.ready(init);
 function init() {
   // Создание карты.
   var myMap = new ymaps.Map("map", {
-    center: [48.418, 135.136118],
-    zoom: 14
+    center: [48.492272755551966, 135.08583719494214],
+    zoom: 16,
   });
+
+  myMap.behaviors.disable('scrollZoom')
 }
+
+const phoneInput = document.getElementById('phone');
+Inputmask({
+  mask: "+7 (999) 999-99-99",
+  placeholder: " ",
+  showMaskOnHover: false,
+  onBeforePaste: function (pastedValue, opts) {
+    return pastedValue.replace(/\D/g, '');
+  }
+}).mask(phoneInput);
+
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  menu.classList.toggle('open');
+});
