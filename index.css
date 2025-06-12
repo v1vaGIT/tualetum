@@ -32,7 +32,10 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .wrapper{
-    overflow-x: hidden;
+
+    max-width: 1820px;
+    margin: 0 auto;
+    width: 100%;
 }
 /* Стили обнулены */
 .startScreen{
@@ -378,7 +381,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 @media screen and (max-width: 1405px) {
     .servicesList{
-        grid-template-rows: repeat(8, 208px) 208px;
+        grid-template-rows: repeat(8, 228px) 208px;
         grid-row-gap: 20px;
         grid-template-columns: 1fr 1fr;
     }
@@ -820,6 +823,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     height: 620px;
     background-color: #f3f3f3;
     position: relative;
+    overflow: hidden;
 }
 .footerWrap{
     width: 100%;
