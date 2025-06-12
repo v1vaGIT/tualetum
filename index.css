@@ -1154,7 +1154,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
     transition: right 0.4s ease;
     z-index: 9999;
     justify-content: center;
