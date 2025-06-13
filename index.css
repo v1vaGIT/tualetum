@@ -399,11 +399,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     grid-row-gap: 10px;
     grid-column-gap: 14px;
     grid-template-columns: 323px repeat(12, 1fr);
-    grid-template-rows: repeat(4, 193px);
+    grid-template-rows: repeat(5, 193px);
 }
 @media screen and (max-width: 1405px) {
     .servicesList{
-        grid-template-rows: repeat(8, 228px) 208px;
+        grid-template-rows: repeat(8, 228px) 208px 228px 228px 228px;
         grid-row-gap: 9px;
         grid-column-gap: 9px;
         grid-template-columns: 1fr 1fr;
@@ -419,7 +419,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-end: 6;
     background-color: #0083C3;
     border-radius: 38px;
     position: relative;
@@ -461,8 +461,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     font-family: 'SF Pro Display', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 21px;
+    line-height: 24px;
     text-transform: uppercase;
     color: #0083C3;
 }
@@ -701,7 +701,44 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
         grid-column-end: 3; 
     }
 }
-
+.services__element-short7{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 6; 
+}
+.services__element-short8{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 6;
+    grid-column-end: 10;
+}
+.services__element-short9{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 10;
+    grid-column-end: 14;
+}
+@media screen and (max-width: 1405px) {
+    .services__element-short7{
+        grid-row-start: 10;
+        grid-row-end: 11;
+        grid-column-start: 1;
+        grid-column-end: 3; 
+    }
+    .services__element-short8{
+        grid-row-start: 11;
+        grid-row-end: 12;
+        grid-column-start: 1;
+        grid-column-end: 3; 
+    }
+    .services__element-short9{
+        grid-row-start: 12;
+        grid-row-end: 13;
+        grid-column-start: 1;
+        grid-column-end: 3; 
+    }
+}
 .aboutWrap{
     margin: 0 40px 130px;
     border-radius: 38px;
@@ -1319,4 +1356,21 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 .workSlideImg{
     height: 214px;
+}
+.whomList{
+    max-width: 100%;
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #002436;
+    margin-top: 15px;
+}
+@media screen and (max-width: 1023px) {
+    .whomList{
+        margin-right: 20px;
+        font-size: 15px;
+        line-height: 17px;
+    }
 }
