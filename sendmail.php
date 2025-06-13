@@ -10,7 +10,7 @@
     $mail->setLanguage('ru', 'phpmailer/language/');
     $mail->IsHTML(true);
 
-    $mail->addAddress('tualetum@mail.ru')
+    $mail->addAddress('tualetum@gmail.com')
 
     $mail->Subject = 'Новая заявка на сайте Туалетум!'
 

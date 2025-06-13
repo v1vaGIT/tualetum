@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('SF-Pro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  /* font-display: swap; Позволяет использовать резервный шрифт во время загрузки */
+}
 /* Обнуление стилей */
 *{
 padding: 0;
@@ -43,6 +50,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     position: relative;
     width: 100%;
     overflow: hidden;
+}
+@media screen and (min-width:1023px) {
+    .startScreen{
+        min-height: 930px;
+    }
 }
 .startScreen__text{
     color: #0083C3;
@@ -110,7 +122,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    text-transform: lowercase;
     color: #002436;
     cursor: pointer;
     position: relative;
@@ -343,18 +354,18 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     width: 100%;
     margin-top: 90px;
     padding: 0 40px;
-    margin-bottom: 140px;
+    margin-bottom: 85px;
 }
 @media screen and (max-width: 1023px) {
     .servicesWrap{
         padding: 0 20px;
-        margin-bottom: 100px;
+        margin-bottom: 45px;
     }
 }
 @media screen and (max-width: 359px) {
     .servicesWrap{
         padding: 0 5px;
-        margin-bottom: 100px;
+        margin-bottom: 45px;
     }
 }
 .servicesTitle{
@@ -385,15 +396,16 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .servicesList{
     width: 100%;
     display: grid;
-    grid-row-gap: 14px;
-    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-column-gap: 14px;
     grid-template-columns: 323px repeat(12, 1fr);
-    grid-template-rows: repeat(4, 208px);
+    grid-template-rows: repeat(4, 193px);
 }
 @media screen and (max-width: 1405px) {
     .servicesList{
         grid-template-rows: repeat(8, 228px) 208px;
-        grid-row-gap: 20px;
+        grid-row-gap: 9px;
+        grid-column-gap: 9px;
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -523,8 +535,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     font-family: 'SF Pro Display', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 13px;
     text-align: center;
     color: #BDBDBD;
 }
@@ -534,8 +546,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     font-family: 'SF Pro Display', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 13px;
     text-align: center;
     color: #0083C3;
 }
@@ -694,7 +706,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     margin: 0 40px 130px;
     border-radius: 38px;
     background-color: #0083C3;
-    padding: 12px 105px 3px;
+    padding: 12px 105px 12px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -762,6 +774,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     justify-content: space-between;
     align-items: center;
     margin-bottom: 80px;
+    gap: 20px;
 }
 @media screen and (max-width: 1178px) {
     .expWrap{
@@ -794,12 +807,15 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .expList{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 .expList__elem{
     display: flex;
     gap: 10px;
     align-items: center;
+}
+.expList__elem svg{
+    flex-shrink: 0;
 }
 .expList__elem p{
     font-family: 'Inter', sans-serif;
@@ -811,8 +827,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 .expImg{
     object-fit: contain;
-    width: 463px;
-    height: 544px;
+    width: 474px;
+    height: auto;
+    border-radius: 38px;
+    border: 1px solid #008DD2;
 }
 @media screen and (max-width: 536px) {
     .expImg{
@@ -846,6 +864,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     background-color: #f3f3f3;
     position: relative;
     overflow: hidden;
+}
+@media screen and (max-width: 480px) {
+    .mapWrap{
+        height: 420px;
+    }
 }
 .footerWrap{
     width: 100%;
@@ -906,15 +929,15 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
        display: none;
     }
 }
-.footerMenu p{
+.footerMenu a{
     font-family: 'SF Pro Display', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    text-transform: lowercase;
     color: #FFFFFF;
     cursor: pointer;
+    text-decoration: none;
 }
 .footerInfo{
     display: flex;
@@ -1073,7 +1096,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     font-weight: 400;
     font-size: 22px;
     line-height: 26px;
-    text-transform: lowercase;
     color: #FFFFFF;
 }
 @media screen and (max-width: 480px) {
@@ -1178,7 +1200,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .contactUs{
     position: fixed;
     z-index: 9998;
-    background-color: #002436;
+    background-color: #0083C3;
+    border: 1px solid #002436;
     height: 80px;
     width: 80px;
     display: flex;
@@ -1188,6 +1211,21 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     right: 50px;
     bottom: 50px;
     border-radius: 50%;
+    animation: pulse 2s infinite; /* Анимация длится 2 секунды и повторяется бесконечно */
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1); /* Увеличиваем до 110% */
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 1023px) {
     .contactUs{
@@ -1278,4 +1316,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
         right: 10px;
         top: -40px;
     }
+}
+.workSlideImg{
+    height: 214px;
 }
