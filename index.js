@@ -207,6 +207,8 @@ function init() {
   });
 
   myMap.behaviors.disable('scrollZoom')
+
+  myMap.geoObjects.add(new ymaps.Placemark([48.492272755551966, 135.08583719494214]))
 }
 
 const phoneInput = document.getElementById('phone');
